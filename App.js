@@ -31,21 +31,21 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-    <View style={{flex:1, justifyContent:'center'}}>
-      <TextInput
+    <View style={{flex: 1, justifyContent: 'center'}}>
+      <TextInput 
         style={styles.input}
         placeholder='keyword'
         onChangeText={text => setKeyword(text)}>
       </TextInput>
-      <Button
+      <Button 
         title="FIND"
         onPress={getRepositories}>
       </Button>
     </View>
-      <FlatList
+      <FlatList style={{flex: 4}}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) =>
-        <View style={{flex:2}}>
+        <View>
           <Text>{item.strMeal}</Text>
           <Image source={{url: item.strMealThumb+'/preview'}}
           style={styles.image}></Image>
